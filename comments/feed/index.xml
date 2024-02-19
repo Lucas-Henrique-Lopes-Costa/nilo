@@ -11,11 +11,11 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../index.html</link>
 	<description>Madeiras certificadas e com garantia de autenticidade</description>
-	<lastBuildDate>Thu, 30 Nov 2023 18:58:52 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 19 Feb 2024 23:49:27 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=6.4.1</generator>
+	<generator>https://wordpress.org/?v=6.4.3</generator>
 </channel>
 </rss>
