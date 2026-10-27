@@ -386,10 +386,15 @@ svg.i{width:1.25em;height:1.25em;flex:none;stroke:currentColor;fill:none;stroke-
 .rating-num{font-size:3.25rem;line-height:1;font-weight:var(--fw-heavy)}
 .rating-card p{margin:0;color:var(--ink-soft);font-size:var(--fs-sm)}
 .stars{color:#f5b301;letter-spacing:.1em;font-size:1.15rem}
-.review-grid{display:grid;gap:var(--sp-5);grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.review-grid{display:grid;gap:var(--sp-5);grid-auto-flow:column;grid-auto-columns:min(82%,300px);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--sp-3)}
+.review-card{scroll-snap-align:start}
+@media (min-width:1100px){.review-grid{grid-auto-flow:row;grid-template-columns:repeat(5,1fr);overflow:visible}}
 .review-card{background:#fff;padding:var(--sp-6);border-radius:var(--r-leaf);display:grid;gap:var(--sp-3);align-content:start}
 .review-card header{display:flex;align-items:center;gap:.75rem}
-.review-card img{width:40px;height:40px;border-radius:50%}
+.review-card header img,.review-avatar{width:40px;height:40px;border-radius:50%;flex:none}
+.review-avatar{display:grid;place-items:center;background:var(--wood-200);color:var(--wood-700);font-weight:var(--fw-heavy)}
+.review-photo{width:calc(100% + 2*var(--sp-6));max-width:none;margin:calc(-1*var(--sp-6)) calc(-1*var(--sp-6)) var(--sp-2);aspect-ratio:4/3;object-fit:cover}
+.review-card{overflow:hidden}
 .review-card small{display:block;color:var(--ink-mute)}
 .review-card p{margin:0;color:var(--ink-soft);font-size:var(--fs-sm);display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
 .logistics{background:var(--wood-50);overflow:hidden}
@@ -445,7 +450,7 @@ svg.i{width:1.25em;height:1.25em;flex:none;stroke:currentColor;fill:none;stroke-
   .gallery img{aspect-ratio:auto}
   .gallery a:nth-child(n+6){grid-column:span 2}
 }
-.videos{background:var(--brand-wood);color:#fff;padding-top:0}
+.videos{background:var(--brand-wood);color:#fff}
 .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),340px));gap:var(--sp-5);justify-content:center;margin-top:var(--sp-6)}
 .video-card{margin:0}
 .video-frame{position:relative;display:block;aspect-ratio:9/16;overflow:hidden;border-radius:var(--r-leaf-sm);background:#000;color:#fff}
@@ -931,7 +936,13 @@ dialog.privacy::backdrop{background:rgba(20,12,4,.7);backdrop-filter:blur(3px)}
         <a class="btn btn--ghost-dark" data-g="link" href="https://www.google.com/maps/search/?api=1&amp;query=Madeireira+Rio+Nilo+Madeiras+e+Telhas+S%C3%A3o+Bernardo+do+Campo" target="_blank" rel="noopener">Ver no Google</a>
       </div>
     </div>
-    <div class="review-grid" data-g="list" hidden></div>
+    <div class="review-grid" data-g="list" data-stagger>
+      <article class="review-card"><img class="review-photo" src="assets/img/review-ivone.webp" alt="Foto enviada por Ivone na avaliação do Google" loading="lazy" decoding="async"><header><span class="review-avatar" aria-hidden="true">I</span><div><strong>Ivone</strong><small>2 semanas atrás · Google</small></div></header><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>Tive indicação de uma amiga que foi até a loja e foi atendida pelo Lídio. Conversamos pelo WhatsApp, ele foi super paciente e atencioso, tirou minhas dúvidas e comprei 2 portas camarão. Me entregou muito rápido. O material excelente! Recomendo a loja e esse vendedor!</p></article>
+      <article class="review-card"><img class="review-photo" src="assets/img/review-renato.webp" alt="Foto enviada por Renato na avaliação do Google" loading="lazy" decoding="async"><header><span class="review-avatar" aria-hidden="true">R</span><div><strong>Renato</strong><small>4 meses atrás · Google</small></div></header><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>Fui muito bem atendido pela Patrícia na Rio Nilo. Atendimento excelente, com muita atenção, educação e profissionalismo. Tirou todas as minhas dúvidas com clareza e agilidade, tornando todo o processo simples e tranquilo. Recomendo!</p></article>
+      <article class="review-card"><img class="review-photo" src="assets/img/review-vagner.webp" alt="Foto enviada por Vagner Marques na avaliação do Google" loading="lazy" decoding="async"><header><span class="review-avatar" aria-hidden="true">V</span><div><strong>Vagner Marques</strong><small>4 meses atrás · Google</small></div></header><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>Gostaria de agradecer ao vendedor Robert, da Madeireira Rio Nilo, pelo excelente atendimento prestado. Foi muito atencioso, educado e prestativo durante todo o processo, esclarecendo dúvidas e ajudando a encontrar exatamente o que precisávamos.</p></article>
+      <article class="review-card"><img class="review-photo" src="assets/img/review-cecilia.webp" alt="Foto enviada por Cecília Blanco na avaliação do Google" loading="lazy" decoding="async"><header><span class="review-avatar" aria-hidden="true">C</span><div><strong>Cecília Blanco</strong><small>5 meses atrás · Google</small></div></header><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>Muito bem atendida pelo Celso. Rápido para responder, e preocupado em resolver qualquer necessidade que eu tive para minha obra. Único local que achei telha da marca São Francisco (qualidade premium) por um bom preço.</p></article>
+      <article class="review-card"><img class="review-photo" src="assets/img/review-barla.webp" alt="Foto enviada por Barla Alessandra na avaliação do Google" loading="lazy" decoding="async"><header><span class="review-avatar" aria-hidden="true">B</span><div><strong>Barla Alessandra</strong><small>4 meses atrás · Google</small></div></header><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>Super satisfeita com madeireira Rio Nilo. Madeiras de qualidade, o atendimento é nota 10. Agradecimento especial ao vendedor Robert, super atencioso e disposto a nos orientar da melhor forma possível. Recomendo a madeireira a todos.</p></article>
+    </div>
   </div>
 </section>
 
