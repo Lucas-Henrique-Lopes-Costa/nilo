@@ -933,7 +933,7 @@ dialog.privacy::backdrop{background:rgba(20,12,4,.7);backdrop-filter:blur(3px)}
           <span class="stars" aria-hidden="true">★★★★★</span>
           <p><span data-g="count">1.764</span> avaliações no Google</p>
         </div>
-        <a class="btn btn--ghost-dark" data-g="link" href="https://www.google.com/maps/search/?api=1&amp;query=Madeireira+Rio+Nilo+Madeiras+e+Telhas+S%C3%A3o+Bernardo+do+Campo" target="_blank" rel="noopener">Ver no Google</a>
+        <a class="btn btn--ghost-dark" data-g="link" href="https://maps.app.goo.gl/XdNFxXJjKgxJki4u6" target="_blank" rel="noopener">Ver no Google</a>
       </div>
     </div>
     <div class="review-grid" data-g="list" data-stagger>
@@ -1100,7 +1100,7 @@ dialog.privacy::backdrop{background:rgba(20,12,4,.7);backdrop-filter:blur(3px)}
       <div>
         <h4>Contato</h4>
         <ul class="contact">
-          <li><svg class="i"><use href="#i-pin"/></svg><a href="https://www.google.com/maps/search/?api=1&query=Rua+dos+Vianas%2C+2670+S%C3%A3o+Bernardo+do+Campo+SP" target="_blank" rel="noopener">Rua dos Vianas, 2670<br>São Bernardo do Campo/SP</a></li>
+          <li><svg class="i"><use href="#i-pin"/></svg><a href="https://maps.app.goo.gl/XdNFxXJjKgxJki4u6" target="_blank" rel="noopener">Rua dos Vianas, 2670<br>São Bernardo do Campo/SP</a></li>
           <li><svg class="i"><use href="#i-phone"/></svg><a href="tel:+551143322874" data-track="phone_click">Televendas (11) 4332-2874</a></li>
           <li><svg class="wa-glyph" style="fill:var(--brand-yellow);width:1.25em;height:1.25em"><use href="#wa"/></svg><a data-wa="rodape" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click">WhatsApp (11) 4330-3528</a></li>
         </ul>
@@ -1142,7 +1142,7 @@ dialog.privacy::backdrop{background:rgba(20,12,4,.7);backdrop-filter:blur(3px)}
       await p.fetchFields({fields:['rating','userRatingCount','reviews','googleMapsURI']});
       if(p.rating)$('rating').textContent=p.rating.toFixed(1).replace('.',',');
       if(p.userRatingCount)$('count').textContent=p.userRatingCount.toLocaleString('pt-BR');
-      if(p.googleMapsURI)$('link').href=p.googleMapsURI;
+      
       var list=(p.reviews||[]).filter(function(v){return v.rating>=4&&v.text});
       if(!list.length)return;
       $('list').innerHTML=list.map(function(v){var a=v.authorAttribution||{};return '<article class="review-card"><header>'+(a.photoURI?'<img src="'+esc(a.photoURI)+'" alt="" loading="lazy" referrerpolicy="no-referrer">':'')+'<div><strong>'+esc(a.displayName)+'</strong><small>'+esc(v.relativePublishTimeDescription)+'</small></div></header><span class="stars" aria-label="'+v.rating+' de 5 estrelas">'+'★'.repeat(v.rating)+'</span><p>'+esc(v.text)+'</p></article>'}).join('');
