@@ -152,6 +152,7 @@ p{margin:0}
 /* projetos (abas) */
 .proj-tabs{display:flex;gap:.6rem;overflow-x:auto;padding:4px 2px 12px;margin-top:2rem;scrollbar-width:none}
 .proj-tabs::-webkit-scrollbar{display:none}
+@media (min-width:700px){.proj-tabs{justify-content:center;flex-wrap:wrap}}
 .tab{flex:none;display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.2rem;border-radius:99px;border:2px solid var(--line);background:#fff;font:inherit;font-weight:800;cursor:pointer;color:var(--ink)}
 .tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
 .panel{display:grid;gap:28px;background:#fff;border-radius:var(--r-lg);padding:clamp(20px,3vw,36px);box-shadow:var(--sh);margin-top:.5rem}
