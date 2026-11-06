@@ -154,7 +154,6 @@ p{margin:0}
 .proj-tabs::-webkit-scrollbar{display:none}
 .tab{flex:none;display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.2rem;border-radius:99px;border:2px solid var(--line);background:#fff;font:inherit;font-weight:800;cursor:pointer;color:var(--ink)}
 .tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-.tab span{font-size:1.2rem}
 .panel{display:grid;gap:28px;background:#fff;border-radius:var(--r-lg);padding:clamp(20px,3vw,36px);box-shadow:var(--sh);margin-top:.5rem}
 @media (min-width:900px){.panel{grid-template-columns:1fr 1.1fr;align-items:center}}
 .panel[hidden]{display:none}
@@ -172,7 +171,8 @@ p{margin:0}
 .item{background:#fff;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .2s,box-shadow .2s}
 .item:hover{transform:translateY(-4px);box-shadow:var(--sh)}
 .item img{height:auto;aspect-ratio:1/1;object-fit:cover;width:100%}
-.item .ph{aspect-ratio:1/1;display:grid;place-items:center;background:var(--yellow);font-size:3.2rem}
+.item .ph{aspect-ratio:1/1;display:grid;place-items:center;background:var(--yellow);color:var(--wood-d)}
+.item .ph .i{width:64px;height:64px;stroke-width:1.5}
 .item div{padding:14px 16px 16px;display:flex;flex-direction:column;gap:.25rem;flex:1}
 .item b{font-family:var(--fd);font-size:1.15rem}
 .item small{color:var(--mute);font-size:.86rem;line-height:1.35}
@@ -339,6 +339,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
   <symbol id="i-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-door" viewBox="0 0 24 24"><path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/><path d="M10 12v.01"/><path d="M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.561Z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
   <symbol id="wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol>
 </svg>
 
@@ -364,7 +368,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero">
   <div class="wrap">
     <div>
-      <span class="kick">📍 Madeireira em São Bernardo do Campo desde 1995</span>
+      <span class="kick">Madeireira em São Bernardo do Campo desde 1995</span>
       <h1>Tudo pra sua obra, <em>entregue</em> na sua porta.</h1>
       <p class="lead">Madeira para telhado, telhas, portas, forros e muito mais. Mande sua lista ou uma foto no WhatsApp e receba o orçamento sem sair de casa, <strong>parcelado em até 18x</strong>.</p>
       <div class="hero-cta">
@@ -395,15 +399,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sec" id="sua-obra">
   <div class="wrap">
     <div class="center rv">
-      <span class="kick">🔨 Sua obra</span>
+      <span class="kick">Sua obra</span>
       <h2>O que você vai fazer?</h2>
       <p class="lead">Escolha sua obra e veja o que normalmente vai nela. A gente ajuda a montar a lista certinha.</p>
     </div>
     <div class="proj-tabs" role="tablist" aria-label="Tipos de obra">
-      <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1"><span>🏠</span>Telhado</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2" tabindex="-1"><span>🚪</span>Portas</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3" tabindex="-1"><span>🪵</span>Forro e acabamento</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p4" id="t4" tabindex="-1"><span>🧱</span>Construção</button>
+      <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">Telhado</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2" tabindex="-1">Portas</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3" tabindex="-1">Forro e acabamento</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p4" id="t4" tabindex="-1">Construção</button>
     </div>
     <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
       <img src="atacadodemadeiras/assets/img/caminhao-telhas.webp" alt="Caminhão da Rio Nilo carregado com telhas" loading="lazy" width="900" height="1200">
@@ -447,7 +451,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sec cat" id="materiais">
   <div class="wrap">
     <div class="center rv">
-      <span class="kick">🪵 Materiais</span>
+      <span class="kick">Materiais</span>
       <h2>Tipos de materiais que você encontra aqui</h2>
       <p class="lead">Toque no material e fale direto com um vendedor no WhatsApp.</p>
     </div>
@@ -456,10 +460,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a class="item rv" data-wa="cat-telhas" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click"><img src="atacadodemadeiras/assets/img/caminhao-telhas.webp" alt="" loading="lazy"><div><b>Telhas</b><small>Brasilit, cerâmica, concreto, PVC e metálicas</small><span class="go">Orçar <svg class="i"><use href="#i-right"/></svg></span></div></a>
       <a class="item rv" data-wa="cat-portas" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click"><img src="atacadodemadeiras/assets/img/portas.webp" alt="" loading="lazy"><div><b>Portas</b><small>Lisas, maciças, camarão, de correr e pivotantes</small><span class="go">Orçar <svg class="i"><use href="#i-right"/></svg></span></div></a>
       <a class="item rv" data-wa="cat-compensados" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click"><img src="atacadodemadeiras/assets/img/compensado-resinado.webp" alt="" loading="lazy"><div><b>Compensados</b><small>Resinado, plastificado, naval e multilaminado</small><span class="go">Orçar <svg class="i"><use href="#i-right"/></svg></span></div></a>
-      <a class="item rv" data-wa="cat-batentes" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click"><div class="ph" aria-hidden="true">🚪</div><div><b>Batentes e guarnições</b><small>Para fechar a instalação da porta</small><span class="go">Orçar <svg class="i"><use href="#i-right"/></svg></span></div></a>
-      <a class="item rv" data-wa="cat-forros" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click"><div class="ph" aria-hidden="true">🪵</div><div><b>Forros</b><small>Forros de madeira para casa e varanda</small><span class="go">Orçar <svg class="i"><use href="#i-right"/></svg></span></div></a>
-      <a class="item rv" data-wa="cat-decks" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click"><div class="ph" aria-hidden="true">🌿</div><div><b>Decks</b><small>Para área externa, piscina e varanda</small><span class="go">Orçar <svg class="i"><use href="#i-right"/></svg></span></div></a>
-      <a class="item rv" data-wa="cat-ferragem" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click"><div class="ph" aria-hidden="true">🔩</div><div><b>Ferragens</b><small>Consulte os itens disponíveis</small><span class="go">Orçar <svg class="i"><use href="#i-right"/></svg></span></div></a>
+      <a class="item rv" data-wa="cat-batentes" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click"><div class="ph" aria-hidden="true"><svg class="i"><use href="#i-door"/></svg></div><div><b>Batentes e guarnições</b><small>Para fechar a instalação da porta</small><span class="go">Orçar <svg class="i"><use href="#i-right"/></svg></span></div></a>
+      <a class="item rv" data-wa="cat-forros" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click"><div class="ph" aria-hidden="true"><svg class="i"><use href="#i-layers"/></svg></div><div><b>Forros</b><small>Forros de madeira para casa e varanda</small><span class="go">Orçar <svg class="i"><use href="#i-right"/></svg></span></div></a>
+      <a class="item rv" data-wa="cat-decks" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click"><div class="ph" aria-hidden="true"><svg class="i"><use href="#i-grid"/></svg></div><div><b>Decks</b><small>Para área externa, piscina e varanda</small><span class="go">Orçar <svg class="i"><use href="#i-right"/></svg></span></div></a>
+      <a class="item rv" data-wa="cat-ferragem" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click"><div class="ph" aria-hidden="true"><svg class="i"><use href="#i-wrench"/></svg></div><div><b>Ferragens</b><small>Consulte os itens disponíveis</small><span class="go">Orçar <svg class="i"><use href="#i-right"/></svg></span></div></a>
     </div>
     <p class="cat-note">Disponibilidade, medidas e espécies variam conforme o estoque.</p>
   </div>
@@ -479,7 +483,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sec">
   <div class="wrap">
     <div class="center rv">
-      <span class="kick">📱 Como funciona</span>
+      <span class="kick">Como funciona</span>
       <h2>Orçamento fácil, direto no WhatsApp</h2>
     </div>
     <div class="steps">
@@ -488,8 +492,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="step rv"><div class="n">3</div><h3>Receba em casa</h3><p>Entregamos com frota própria no ABC e na Grande São Paulo.</p></div>
     </div>
     <div class="chat rv" aria-hidden="true">
-      <div class="msg me">Oi! Vou trocar o telhado da edícula, 5x4 m. Consegue me ajudar com a lista? 🙏<small>09:12</small></div>
-      <div class="msg them">Claro! Me manda uma foto do telhado e a gente monta o orçamento com madeira e telha 😉<small>09:13</small></div>
+      <div class="msg me">Oi! Vou trocar o telhado da edícula, 5x4 m. Consegue me ajudar com a lista? <small>09:12</small></div>
+      <div class="msg them">Claro! Me manda uma foto do telhado e a gente monta o orçamento com madeira e telha <small>09:13</small></div>
     </div>
     <p class="cat-note">Exemplo ilustrativo de conversa.</p>
   </div>
@@ -502,7 +506,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="tag"><svg class="i"><use href="#i-truck"/></svg>Frota própria</span>
     </div>
     <div class="rv">
-      <span class="kick">🚚 Entrega rápida</span>
+      <span class="kick">Entrega rápida</span>
       <h2>A gente leva até você.</h2>
       <p class="lead">Entregas diárias com caminhões próprios, direto na sua casa ou obra.</p>
       <ul class="cities">
@@ -515,7 +519,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="sec" style="padding-bottom:0">
   <div class="wrap center rv">
-    <span class="kick">📸 Fotos reais</span>
+    <span class="kick">Fotos reais</span>
     <h2>Direto do nosso pátio</h2>
   </div>
   <div class="strip">
@@ -530,12 +534,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="sec">
   <div class="wrap center rv">
-    <span class="kick">▶️ Vídeos</span>
+    <span class="kick">▶Vídeos</span>
     <h2>Conheça a Rio Nilo</h2>
   </div>
   <div class="vids wrap">
-    <a class="vid" href="https://youtube.com/shorts/00RsXz9n06I" target="_blank" rel="noopener" data-yt="00RsXz9n06I" data-title="Conheça a Rio Nilo Madeiras"><img src="https://i.ytimg.com/vi/00RsXz9n06I/oar2.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true">▶</span><span class="sr-only">Assistir vídeo: Conheça a Rio Nilo Madeiras</span></a>
-    <a class="vid" href="https://youtube.com/shorts/d1lfV7obZ90" target="_blank" rel="noopener" data-yt="d1lfV7obZ90" data-title="Madeiras para construção na Rio Nilo"><img src="https://i.ytimg.com/vi/d1lfV7obZ90/oar2.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true">▶</span><span class="sr-only">Assistir vídeo: Madeiras para construção</span></a>
+    <a class="vid" href="https://youtube.com/shorts/00RsXz9n06I" target="_blank" rel="noopener" data-yt="00RsXz9n06I" data-title="Conheça a Rio Nilo Madeiras"><img src="https://i.ytimg.com/vi/00RsXz9n06I/oar2.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M7 4l13 8-13 8z"/></svg></span><span class="sr-only">Assistir vídeo: Conheça a Rio Nilo Madeiras</span></a>
+    <a class="vid" href="https://youtube.com/shorts/d1lfV7obZ90" target="_blank" rel="noopener" data-yt="d1lfV7obZ90" data-title="Madeiras para construção na Rio Nilo"><img src="https://i.ytimg.com/vi/d1lfV7obZ90/oar2.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M7 4l13 8-13 8z"/></svg></span><span class="sr-only">Assistir vídeo: Madeiras para construção</span></a>
   </div>
 </section>
 
@@ -558,7 +562,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sec quote" id="orcamento">
   <div class="wrap">
     <div class="rv">
-      <span class="kick">📝 Orçamento grátis</span>
+      <span class="kick">Orçamento grátis</span>
       <h2>Peça seu orçamento em 1 minuto</h2>
       <p class="lead">Preencha e o WhatsApp abre com tudo pronto. É só tocar em enviar.</p>
       <div class="contacts">
@@ -575,10 +579,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="field"><label for="f-cidade">Cidade ou bairro da entrega *</label><input id="f-cidade" name="cidade" autocomplete="address-level2"><span class="err">Informe a cidade ou bairro.</span></div>
       <fieldset style="border:0;padding:0;margin:0"><legend style="font-weight:800;font-size:.92rem;margin-bottom:.35rem">Qual é a sua obra?</legend>
         <div class="pills">
-          <label><input type="radio" name="obra" value="Telhado"><span>🏠 Telhado</span></label>
-          <label><input type="radio" name="obra" value="Portas"><span>🚪 Portas</span></label>
-          <label><input type="radio" name="obra" value="Forro/acabamento"><span>🪵 Forro</span></label>
-          <label><input type="radio" name="obra" value="Construção"><span>🧱 Construção</span></label>
+          <label><input type="radio" name="obra" value="Telhado"><span>Telhado</span></label>
+          <label><input type="radio" name="obra" value="Portas"><span>Portas</span></label>
+          <label><input type="radio" name="obra" value="Forro/acabamento"><span>Forro</span></label>
+          <label><input type="radio" name="obra" value="Construção"><span>Construção</span></label>
           <label><input type="radio" name="obra" value="Outra"><span>Outra</span></label>
         </div>
       </fieldset>
@@ -600,7 +604,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="sec cat" id="duvidas">
   <div class="wrap">
-    <div class="center rv"><span class="kick">💬 Dúvidas</span><h2>Perguntas frequentes</h2></div>
+    <div class="center rv"><span class="kick">Dúvidas</span><h2>Perguntas frequentes</h2></div>
     <div class="faq-list">
       <details><summary>Vocês parcelam?</summary><p>Sim. O orçamento pode ser dividido em até 18x. Consulte as condições com o vendedor.</p></details>
       <details><summary>Vocês entregam?</summary><p>Sim. Temos frota própria e fazemos entregas diárias no ABC Paulista e na Grande São Paulo, conforme a programação.</p></details>
