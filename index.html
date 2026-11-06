@@ -248,7 +248,10 @@ p{margin:0}
 
 /* orçamento */
 .quote .wrap{display:grid;gap:40px}
-@media (min-width:960px){.quote .wrap{grid-template-columns:.9fr 1.1fr;align-items:start}}
+.map{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh);min-height:420px;background:var(--wood-l)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map .btn{position:absolute;left:16px;bottom:16px}
+@media (min-width:960px){.quote .wrap{grid-template-columns:.9fr 1.1fr;align-items:stretch}}
 .form{background:#fff;border-radius:var(--r-lg);padding:clamp(22px,3vw,36px);box-shadow:var(--sh);display:grid;gap:14px}
 .form label{font-weight:800;font-size:.92rem;display:block;margin-bottom:.35rem}
 .form input,.form textarea,.form select{width:100%;font:inherit;padding:.85rem 1rem;border:2px solid var(--line);border-radius:14px;background:var(--cream);color:var(--ink)}
@@ -565,43 +568,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sec quote" id="orcamento">
   <div class="wrap">
     <div class="rv">
-      <span class="kick">Orçamento grátis</span>
-      <h2>Peça seu orçamento em 1 minuto</h2>
-      <p class="lead">Preencha e o WhatsApp abre com tudo pronto. É só tocar em enviar.</p>
+      <span class="kick">Fale com a gente</span>
+      <h2>Chame no WhatsApp ou venha na loja</h2>
+      <p class="lead">Seg a sex, das 8h às 17h, e sábados, das 8h às 13h.</p>
       <div class="contacts">
         <a data-wa="direto" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click"><span class="ic"><svg class="wa-i"><use href="#wa"/></svg></span><span><small>WhatsApp</small><b>(11) 4330-3528</b></span></a>
         <a href="tel:+551143322874" data-track="phone_click"><span class="ic"><svg class="i"><use href="#i-phone"/></svg></span><span><small>Televendas</small><b>(11) 4332-2874</b></span></a>
         <a href="https://maps.app.goo.gl/XdNFxXJjKgxJki4u6" target="_blank" rel="noopener"><span class="ic"><svg class="i"><use href="#i-pin"/></svg></span><span><small>Loja</small><b>Rua dos Vianas, 2670 · São Bernardo do Campo</b></span></a>
       </div>
     </div>
-    <form class="form rv" id="quote-form" novalidate>
-      <div class="row2">
-        <div class="field"><label for="f-nome">Seu nome *</label><input id="f-nome" name="nome" autocomplete="name"><span class="err">Informe seu nome.</span></div>
-        <div class="field"><label for="f-whats">WhatsApp *</label><input id="f-whats" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000"><span class="err">Informe um WhatsApp com DDD.</span></div>
-      </div>
-      <div class="field"><label for="f-cidade">Cidade ou bairro da entrega *</label><input id="f-cidade" name="cidade" autocomplete="address-level2"><span class="err">Informe a cidade ou bairro.</span></div>
-      <fieldset style="border:0;padding:0;margin:0"><legend style="font-weight:800;font-size:.92rem;margin-bottom:.35rem">Qual é a sua obra?</legend>
-        <div class="pills">
-          <label><input type="radio" name="obra" value="Telhado"><span>Telhado</span></label>
-          <label><input type="radio" name="obra" value="Portas"><span>Portas</span></label>
-          <label><input type="radio" name="obra" value="Forro/acabamento"><span>Forro</span></label>
-          <label><input type="radio" name="obra" value="Construção"><span>Construção</span></label>
-          <label><input type="radio" name="obra" value="Outra"><span>Outra</span></label>
-        </div>
-      </fieldset>
-      <div class="field"><label for="f-materiais">O que você precisa? *</label><textarea id="f-materiais" name="materiais" placeholder="Ex.: madeira para telhado de 6x8 m, 2 portas de 80 cm, telhas Brasilit…"></textarea><span class="err">Conte o que você precisa.</span></div>
-      <fieldset style="border:0;padding:0;margin:0"><legend style="font-weight:800;font-size:.92rem;margin-bottom:.35rem">Como prefere pagar?</legend>
-        <div class="pills">
-          <label><input type="radio" name="pagamento" value="Parcelado"><span>Parcelado</span></label>
-          <label><input type="radio" name="pagamento" value="À vista"><span>À vista</span></label>
-          <label><input type="radio" name="pagamento" value="Ainda não sei"><span>Ainda não sei</span></label>
-        </div>
-      </fieldset>
-      <div class="hp" aria-hidden="true"><label for="f-site">Não preencha</label><input id="f-site" name="site" tabindex="-1" autocomplete="off"></div>
-      <div class="consent"><input type="checkbox" id="f-lgpd" name="lgpd"><label for="f-lgpd" style="font-weight:600;margin:0">Autorizo o uso destes dados pela Rio Nilo Madeiras só para responder este orçamento. <button type="button" data-privacy>Ver aviso de privacidade</button></label></div>
-      <p class="status" id="form-status" role="status" aria-live="polite"></p>
-      <button class="btn btn-wa" type="submit"><svg class="wa-i"><use href="#wa"/></svg>Receber meu orçamento</button>
-    </form>
+    <div class="map rv"><iframe title="Mapa da loja Rio Nilo Madeiras em São Bernardo do Campo" src="https://www.google.com/maps?q=Madeireira%20Rio%20Nilo%2C%20Rua%20dos%20Vianas%202670%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20SP&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a class="btn btn-dark" href="https://maps.app.goo.gl/XdNFxXJjKgxJki4u6" target="_blank" rel="noopener">Como chegar</a></div>
   </div>
 </section>
 
@@ -661,9 +637,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <dialog id="privacy" aria-labelledby="pv-t">
   <h2 id="pv-t" style="font-size:1.5rem">Aviso de privacidade</h2>
-  <p>Os dados do formulário (nome, WhatsApp, local de entrega, tipo de obra, materiais e forma de pagamento) são usados pela Rio Nilo Madeiras só para:</p>
-  <ul><li>responder ao seu pedido de orçamento;</li><li>falar com você sobre preço, disponibilidade e entrega.</li></ul>
-  <p>Esta página não guarda os dados em servidor: ao enviar, a mensagem abre no seu WhatsApp para você revisar e enviar. Para acesso, correção ou exclusão dos dados, ligue (11) 4332-2874.</p>
+  <p>Este site não coleta dados por formulário. As conversas acontecem pelo WhatsApp ou telefone, e as informações que você enviar são usadas pela Rio Nilo Madeiras só para responder ao seu orçamento.</p>
+  <p>Para acesso, correção ou exclusão dos seus dados, ligue (11) 4332-2874.</p>
   <button class="btn btn-dark" type="button" data-close>Entendi</button>
 </dialog>
 
@@ -725,25 +700,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.querySelectorAll('[data-privacy]').forEach(function(b){b.addEventListener('click',function(){dlg.showModal&&dlg.showModal()})});
   dlg.querySelector('[data-close]').addEventListener('click',function(){dlg.close()});
 
-  // formulário → WhatsApp
-  var f=document.getElementById('quote-form'),st=document.getElementById('form-status'),ph=f.elements.whatsapp;
-  ph.addEventListener('input',function(){var d=ph.value.replace(/\D/g,'').slice(0,11);ph.value=d.length>10?d.replace(/^(\d{2})(\d{5})(\d{0,4})/,'($1) $2-$3'):d.replace(/^(\d{2})(\d{4})(\d{0,4})/,'($1) $2-$3').replace(/^(\d{1,2})$/,'($1')});
-  var V={nome:function(v){return v.trim().length>=2},whatsapp:function(v){return v.replace(/\D/g,'').length>=10},cidade:function(v){return v.trim().length>=3},materiais:function(v){return v.trim().length>=3}};
-  var started=false;f.addEventListener('focusin',function(){if(!started){started=true;track('form_start')}});
-  f.addEventListener('submit',function(e){
-    e.preventDefault();if(f.elements.site.value)return;
-    var bad=Object.keys(V).filter(function(n){var ok=V[n](f.elements[n].value);f.elements[n].closest('.field').classList.toggle('bad',!ok);f.elements[n].setAttribute('aria-invalid',!ok);return !ok});
-    if(bad.length){st.textContent='Revise os campos destacados.';st.className='status no';f.elements[bad[0]].focus();return}
-    if(!f.elements.lgpd.checked){st.textContent='Marque a autorização para continuar.';st.className='status no';f.elements.lgpd.focus();return}
-    var obra=(f.querySelector('[name=obra]:checked')||{}).value,pag=(f.querySelector('[name=pagamento]:checked')||{}).value;
-    var L=['*Pedido de orçamento — site*','','*Nome:* '+f.elements.nome.value.trim(),'*WhatsApp:* '+ph.value,'*Entrega:* '+f.elements.cidade.value.trim()];
-    if(obra)L.push('*Obra:* '+obra);if(pag)L.push('*Pagamento:* '+pag);
-    L.push('','*O que preciso:*',f.elements.materiais.value.trim());
-    if(utm.utm_campaign)L.push('','Campanha: '+utm.utm_campaign);
-    track('generate_lead',{metodo:'formulario_whatsapp',obra:obra||'nao_informado',pagamento:pag||'nao_informado'});
-    var w=window.open(link(L.join('\n')),'_blank');if(w)w.opener=null;
-    st.textContent=w?'Abrimos o WhatsApp com seu pedido. É só tocar em enviar!':'Não conseguimos abrir o WhatsApp. Ligue (11) 4332-2874.';st.className='status '+(w?'ok':'no');
-  });
 })();
 </script>
 </body>
