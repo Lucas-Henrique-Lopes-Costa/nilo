@@ -221,24 +221,25 @@ p{margin:0}
 @media (min-width:1200px){.strip{justify-content:center}}
 
 /* avaliações */
-.rev{background:var(--wood-d);color:#fff}
-.rev .lead{color:rgba(255,255,255,.75)}
-.rev .kick{background:rgba(255,255,255,.1);color:var(--yellow)}
+.rev{background:var(--wood-l)}
+.rev .kick{background:#fff}
 .rev-head{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:end}
-.score{background:#fff;color:var(--ink);border-radius:var(--r);padding:16px 22px;display:flex;gap:14px;align-items:center}
-.score b{font-family:var(--fd);font-size:2.6rem;line-height:1}
+.score{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 24px;display:flex;gap:16px;align-items:center}
+.score b{font-family:var(--fd);font-size:3rem;line-height:1}
+.score small{color:var(--mute);font-weight:700}
 .score a{font-weight:800;color:var(--wood)}
-.review-grid{display:grid;grid-auto-flow:column;grid-auto-columns:min(84%,320px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:2.5rem;padding-bottom:8px;scrollbar-width:none}
-.review-grid::-webkit-scrollbar{display:none}
-@media (min-width:1100px){.review-grid{grid-auto-flow:row;grid-template-columns:repeat(5,1fr)}}
-.review-card{background:#fff;color:var(--ink);border-radius:var(--r);overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column}
-.review-photo{width:100%;aspect-ratio:4/3;object-fit:cover}
-.review-card header{display:flex;gap:.6rem;align-items:center;padding:14px 16px 0}
-.review-card header small{display:block;color:var(--mute);font-size:.8rem}
-.review-avatar{width:36px;height:36px;border-radius:50%;background:var(--wood);color:#fff;display:grid;place-items:center;font-weight:800}
-.review-card .stars{padding:6px 16px 0}
-.review-card p{padding:6px 16px 18px;font-size:.93rem;display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
-
+.review-grid{columns:1;column-gap:18px;margin-top:2.5rem}
+@media (min-width:700px){.review-grid{columns:2}}
+@media (min-width:1050px){.review-grid{columns:3}}
+.review-card{break-inside:avoid;margin:0 0 18px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;grid-template-columns:1fr 88px;gap:14px 16px;align-items:start}
+.review-card header{grid-column:1/-1;grid-row:1;display:flex;gap:.7rem;align-items:center}
+.review-card header strong{font-size:1.05rem}
+.review-card header small{display:block;color:var(--mute);font-size:.85rem}
+.review-avatar{width:42px;height:42px;border-radius:50%;background:var(--wood);color:#fff;display:grid;place-items:center;font-weight:800;flex:none}
+.review-card .stars{grid-column:1/-1;grid-row:2;font-size:1.1rem;line-height:1}
+.review-card p{grid-column:1;grid-row:3;font-size:1rem;line-height:1.6;color:var(--ink);margin:0}
+.review-photo{grid-column:2;grid-row:3;width:88px;height:88px;object-fit:cover;border-radius:14px;cursor:zoom-in}
+.rev-more{text-align:center;margin-top:1.5rem}
 /* vídeos */
 .vids{display:grid;gap:16px;grid-template-columns:repeat(2,minmax(0,260px));justify-content:center;margin-top:2.5rem}
 .vid{position:relative;display:block;border-radius:var(--r);overflow:hidden;aspect-ratio:9/16;background:#000}
@@ -535,7 +536,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="sec">
   <div class="wrap center rv">
-    <span class="kick">▶Vídeos</span>
+    <span class="kick">Vídeos</span>
     <h2>Conheça a Rio Nilo</h2>
   </div>
   <div class="vids wrap">
@@ -547,8 +548,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sec rev" id="avaliacoes">
   <div class="wrap">
     <div class="rev-head rv">
-      <div><span class="kick">⭐ Avaliações</span><h2>Quem compra, recomenda.</h2></div>
-      <div class="score"><b>4,9</b><div><span class="stars" aria-hidden="true">★★★★★</span><br><small>1.764 avaliações</small><br><a href="https://maps.app.goo.gl/XdNFxXJjKgxJki4u6" target="_blank" rel="noopener">Ver no Google</a></div></div>
+      <div><span class="kick">Avaliações no Google</span><h2>Quem compra, recomenda.</h2><p class="lead">Avaliações reais de clientes, publicadas no perfil da Rio Nilo no Google.</p></div>
+      <div class="score"><b>4,9</b><div><span class="stars" aria-hidden="true">★★★★★</span><br><small>1.764 avaliações no Google</small><br><a href="https://maps.app.goo.gl/XdNFxXJjKgxJki4u6" target="_blank" rel="noopener">Ver no Google</a></div></div>
     </div>
     <div class="review-grid">
 <article class="review-card"><img class="review-photo" src="atacadodemadeiras/assets/img/review-ivone.webp" alt="Foto enviada por Ivone na avaliação do Google" loading="lazy" decoding="async"><header><span class="review-avatar" aria-hidden="true">I</span><div><strong>Ivone</strong><small>2 semanas atrás · Google</small></div></header><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>Tive indicação de uma amiga que foi até a loja e foi atendida pelo Lídio. Conversamos pelo WhatsApp, ele foi super paciente e atencioso, tirou minhas dúvidas e comprei 2 portas camarão. Me entregou muito rápido. O material excelente! Recomendo a loja e esse vendedor!</p></article>
@@ -558,6 +559,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <article class="review-card"><img class="review-photo" src="atacadodemadeiras/assets/img/review-barla.webp" alt="Foto enviada por Barla Alessandra na avaliação do Google" loading="lazy" decoding="async"><header><span class="review-avatar" aria-hidden="true">B</span><div><strong>Barla Alessandra</strong><small>4 meses atrás · Google</small></div></header><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>Super satisfeita com madeireira Rio Nilo. Madeiras de qualidade, o atendimento é nota 10. Agradecimento especial ao vendedor Robert, super atencioso e disposto a nos orientar da melhor forma possível. Recomendo a madeireira a todos.</p></article>
     </div>
   </div>
+  <div class="wrap rev-more"><a class="btn btn-line" href="https://maps.app.goo.gl/XdNFxXJjKgxJki4u6" target="_blank" rel="noopener">Ler todas as avaliações no Google</a></div>
 </section>
 
 <section class="sec quote" id="orcamento">
@@ -714,6 +716,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   // vídeos
   document.querySelectorAll('.vid[data-yt]').forEach(function(a){a.addEventListener('click',function(e){if(location.protocol==='file:')return;e.preventDefault();var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&playsinline=1&rel=0';f.title=a.dataset.title;f.allow='autoplay; encrypted-media; fullscreen';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';a.innerHTML='';a.appendChild(f);track('video_play',{video_id:a.dataset.yt})})});
+
+  // foto da avaliação ampliada
+  document.querySelectorAll('.review-photo').forEach(function(im){im.addEventListener('click',function(){window.open(im.src,'_blank')})});
 
   // privacidade
   var dlg=document.getElementById('privacy');
