@@ -713,7 +713,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});rv.forEach(function(el){io.observe(el)})}else rv.forEach(function(el){el.classList.add('in')});
 
   // vídeos
-  document.querySelectorAll('.vid[data-yt]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&playsinline=1&rel=0';f.title=a.dataset.title;f.allow='autoplay; encrypted-media; fullscreen';f.allowFullscreen=true;a.innerHTML='';a.appendChild(f);track('video_play',{video_id:a.dataset.yt})})});
+  document.querySelectorAll('.vid[data-yt]').forEach(function(a){a.addEventListener('click',function(e){if(location.protocol==='file:')return;e.preventDefault();var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&playsinline=1&rel=0';f.title=a.dataset.title;f.allow='autoplay; encrypted-media; fullscreen';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';a.innerHTML='';a.appendChild(f);track('video_play',{video_id:a.dataset.yt})})});
 
   // privacidade
   var dlg=document.getElementById('privacy');

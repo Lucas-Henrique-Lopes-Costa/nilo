@@ -1364,12 +1364,14 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Galeria ---------- */
   document.querySelectorAll('.video-frame[data-yt]').forEach(function (a) {
     a.addEventListener('click', function (e) {
+      if (location.protocol === 'file:') return;
       e.preventDefault();
       var f = document.createElement('iframe');
       f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1&playsinline=1&rel=0';
       f.title = a.dataset.title;
       f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       f.allowFullscreen = true;
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
       var wrap = document.createElement('div'); wrap.className = 'video-frame';
       wrap.appendChild(f); a.replaceWith(wrap); f.focus();
       if (window.dataLayer) dataLayer.push({ event: 'video_play', video_id: a.dataset.yt });
