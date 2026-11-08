@@ -223,6 +223,13 @@ p{margin:0}
 /* avaliações */
 .rev{background:var(--wood-l)}
 .rev .kick{background:#fff}
+.depo{display:grid;gap:28px;align-items:center;background:#fff;border-radius:var(--r);padding:20px;margin:2rem 0 2.5rem}
+.depo video{width:100%;max-width:300px;aspect-ratio:9/16;border-radius:var(--r);background:#000;display:block;margin:0 auto}
+.depo blockquote{margin:0;font-size:1.15rem;line-height:1.55}
+.depo cite{display:block;margin-top:1rem;font-style:normal;font-weight:700}
+.depo cite small{display:block;font-weight:400;opacity:.7}
+@media (min-width:800px){.depo{grid-template-columns:300px 1fr;padding:28px 40px 28px 28px}}
+
 .rev-head{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:end}
 .score{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 24px;display:flex;gap:16px;align-items:center}
 .score b{font-family:var(--fd);font-size:3rem;line-height:1}
@@ -535,6 +542,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div><span class="kick">Avaliações no Google</span><h2>Quem compra, recomenda.</h2><p class="lead">Avaliações reais de clientes, publicadas no perfil da Rio Nilo no Google.</p></div>
       <div class="score"><b>4,9</b><div><span class="stars" aria-hidden="true">★★★★★</span><br><small>1.764 avaliações no Google</small><br><a href="https://maps.app.goo.gl/XdNFxXJjKgxJki4u6" target="_blank" rel="noopener">Ver no Google</a></div></div>
     </div>
+    <div class="depo rv">
+      <video controls playsinline preload="none" poster="atacadodemadeiras/assets/img/depoimento-plinio.jpg" title="Depoimento de Plínio, sócio do Villa Jardim"><source src="atacadodemadeiras/assets/video/depoimento-plinio.mp4" type="video/mp4"></video>
+      <div><span class="kick">Depoimento em vídeo</span>
+        <blockquote>“Deck de madeira, ripado, eucalipto tratado, telhas de PVC, telhas de cerâmica. […] Quando eu cheguei na loja, ela me tratou como se tivesse me conhecido vários anos.”</blockquote>
+        <cite>Plínio<small>Sócio do Villa Jardim, São Bernardo do Campo</small></cite>
+        <a class="btn btn-wa" data-wa="depoimento" href="https://wa.me/551143303528" target="_blank" rel="noopener" data-track="whatsapp_click" style="margin-top:1.25rem"><svg class="wa-i"><use href="#wa"/></svg>Quero orçar minha obra</a>
+      </div>
+    </div>
     <div class="review-grid">
 <article class="review-card"><img class="review-photo" src="atacadodemadeiras/assets/img/review-ivone.webp" alt="Foto enviada por Ivone na avaliação do Google" loading="lazy" decoding="async"><header><span class="review-avatar" aria-hidden="true">I</span><div><strong>Ivone</strong><small>2 semanas atrás · Google</small></div></header><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>Tive indicação de uma amiga que foi até a loja e foi atendida pelo Lídio. Conversamos pelo WhatsApp, ele foi super paciente e atencioso, tirou minhas dúvidas e comprei 2 portas camarão. Me entregou muito rápido. O material excelente! Recomendo a loja e esse vendedor!</p></article>
 <article class="review-card"><img class="review-photo" src="atacadodemadeiras/assets/img/review-renato.webp" alt="Foto enviada por Renato na avaliação do Google" loading="lazy" decoding="async"><header><span class="review-avatar" aria-hidden="true">R</span><div><strong>Renato</strong><small>4 meses atrás · Google</small></div></header><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>Fui muito bem atendido pela Patrícia na Rio Nilo. Atendimento excelente, com muita atenção, educação e profissionalismo. Tirou todas as minhas dúvidas com clareza e agilidade, tornando todo o processo simples e tranquilo. Recomendo!</p></article>
@@ -642,6 +657,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     'cat-forros':'Olá, Rio Nilo! Gostaria de orçar forros.',
     'cat-decks':'Olá, Rio Nilo! Gostaria de orçar decks.',
     'cat-ferragem':'Olá, Rio Nilo! Gostaria de orçar ferragens.',
+    'depoimento':'Olá, Rio Nilo! Vi o depoimento no site e quero orçar minha obra.',
     pagamento:'Olá, Rio Nilo! Gostaria de saber as condições de parcelamento.',
     direto:'Olá, Rio Nilo! Gostaria de um orçamento.',
     final:'Olá, Rio Nilo! Gostaria de um orçamento para minha obra.',
@@ -671,6 +687,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});rv.forEach(function(el){io.observe(el)})}else rv.forEach(function(el){el.classList.add('in')});
 
   // vídeos
+  var dv=document.querySelector('.depo video');if(dv)dv.addEventListener('play',function(){track('video_play',{video_id:'depoimento-plinio'})},{once:true});
   document.querySelectorAll('.vid[data-yt]').forEach(function(a){a.addEventListener('click',function(e){if(location.protocol==='file:')return;e.preventDefault();var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&playsinline=1&rel=0';f.title=a.dataset.title;f.allow='autoplay; encrypted-media; fullscreen';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';a.innerHTML='';a.appendChild(f);track('video_play',{video_id:a.dataset.yt})})});
 
   // foto da avaliação ampliada
